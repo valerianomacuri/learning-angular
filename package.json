@@ -49,7 +49,6 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "raw-loader": "^4.0.2",
-    "shiki": "^3.8.1",
     "typescript": "~5.8.2"
   }
 }
