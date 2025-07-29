@@ -6,7 +6,8 @@
     </label>
     <div
       class="tab-content bg-base-100 border-base-300 p-6 overflow-x-auto prose prose-sm md:prose-base max-w-none"
-      [innerHTML]="file.code"
-    ></div>
+    >
+      <pre><code [highlight]="file.code" language="html" style="padding: 0px; background: none;"></code></pre>
+    </div>
   </ng-container>
 </div>

@@ -1,10 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import "highlight.js/styles/atom-one-dark.css";
 @import "tailwindcss";
-@plugin "daisyui";
 @plugin "@tailwindcss/typography";
+@plugin "daisyui";
 @theme {
-  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
 }
 body {
   @apply font-sans;

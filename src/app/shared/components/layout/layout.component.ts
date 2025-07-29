@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { SignalShowcaseComponent } from '../../../features/signal/components';
+import { FeatureShowcaseListComponent } from '../feature-showcase-list/feature-showcase-list.component';
 
 @Component({
   selector: 'app-layout',
-  imports: [SignalShowcaseComponent],
+  imports: [FeatureShowcaseListComponent],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

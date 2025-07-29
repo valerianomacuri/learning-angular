@@ -1,0 +1,21 @@
+<ng-container
+  *ngFor="let feature of featureList(); trackBy: trackByFeatureName"
+>
+  <app-feature-showcase
+    [title]="feature.title"
+    [description]="feature.description"
+  >
+    <ng-container example>
+      <app-feature-example title="Ejemplo interactivo: Actualizar un contador">
+        <ng-container *ngComponentOutlet="feature.exampleComponent">
+        </ng-container>
+      </app-feature-example>
+    </ng-container>
+    <ng-container file-list>
+      <app-feature-file-list
+        [name]="feature.title"
+        [files]="feature.files"
+      ></app-feature-file-list>
+    </ng-container>
+  </app-feature-showcase>
+</ng-container>

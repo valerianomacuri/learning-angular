@@ -7,7 +7,7 @@ export class CodeHighlightService {
   private theme = 'one-dark-pro';
   async angularHtmlToHtml(code: string = ''): Promise<string> {
     const highlightedHtml = await codeToHtml(code, {
-      lang: 'angular-html',
+      lang: 'vue',
       theme: this.theme,
     });
     const cleanHtml = this.removeBackgroundHtml(highlightedHtml);
