@@ -1,7 +1,11 @@
-<section>
+<section [id]="anchor()" class="pt-4">
   <article class="prose prose-sm md:prose-base mb-8 max-w-none">
-    <h3># {{ title() }}</h3>
-    <p class="text-justify" [innerHTML]="description()"></p>
+    <h3>
+      <a class="no-underline" [href]="'#' + anchor()"> # {{ title() }} </a>
+    </h3>
+    <markdown class="text-justify">
+      {{ description() }}
+    </markdown>
   </article>
   <ng-content select="[example]"></ng-content>
   <ng-content select="[file-list]"></ng-content>

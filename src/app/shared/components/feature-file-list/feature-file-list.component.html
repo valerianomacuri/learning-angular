@@ -1,10 +1,12 @@
-<div class="tabs tabs-border">
+<div class="tabs tabs-border mb-4">
   <ng-container *ngFor="let file of files(); trackBy: trackByFileName">
     <label class="tab">
       <input type="radio" [name]="name()" [checked]="file.defaultIsOpen" />
       {{ file.name }}
     </label>
-    <div class="tab-content p-0 prose prose-sm md:prose-base max-w-none">
+    <div
+      class="tab-content p-0 prose prose-sm md:prose-base max-w-none min-h-56"
+    >
       <pre
         style="display: grid"
       ><code [highlight]="file.code" [language]="file.lang" style="padding: 0px; background: none;"></code></pre>

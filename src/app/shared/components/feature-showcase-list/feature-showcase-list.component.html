@@ -4,9 +4,10 @@
   <app-feature-showcase
     [title]="feature.title"
     [description]="feature.description"
+    [anchor]="feature.anchor"
   >
     <ng-container example>
-      <app-feature-example title="Ejemplo interactivo: Actualizar un contador">
+      <app-feature-example [title]="feature.exampleTitle">
         <ng-container *ngComponentOutlet="feature.exampleComponent">
         </ng-container>
       </app-feature-example>

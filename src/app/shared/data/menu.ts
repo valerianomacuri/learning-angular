@@ -20,16 +20,12 @@ export const menu: Menu[] = [
         ],
       },
       {
-        name: 'Estructura de Componentes', // Formas de definir componentes Angular.
-        path: 'component-structure',
+        name: 'Declaración de componentes', // Formas de definir componentes Angular.
+        path: 'declaration',
         children: [
           {
             name: '@Component Decorator', // Decorador para definir la lógica y vista del componente.
             path: '#component-decorator',
-          },
-          {
-            name: 'Selector y Plantilla', // Cómo se identifica y renderiza un componente.
-            path: '#selector-template',
           },
         ],
       },
