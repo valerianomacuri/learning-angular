@@ -3,5 +3,4 @@ export interface File {
   defaultIsOpen?: boolean;
   lang: string;
   name: string;
-  prettyCode: string;
 }

@@ -1,7 +1,18 @@
-import { SignalExampleComponent } from '../../features/signal/components';
-import singalExampleRaw from '../../features/signal/components/signal-example/signal-example.component.html';
+import { Type } from '@angular/core';
+import { SignalExampleComponent } from '../../features/base/components';
+import singalExampleHtmlRaw from '../../features/base/components/signal-example/signal-example.component.html';
+import singalExampleTsRaw from '../../features/base/components/signal-example/signal-example.component.ts.txt';
+import { File } from '../interfaces';
 
-export const features = [
+interface Features {
+  title: string;
+  description: string;
+  exampleComponent: Type<any>;
+  exampleTitle: string;
+  files: File[];
+}
+
+export const features: Features[] = [
   {
     title: 'signal',
     description: 'Lorem ipsum',
@@ -9,10 +20,15 @@ export const features = [
     exampleTitle: 'Ejemplo interactivo: Actualizar un contador',
     files: [
       {
-        code: singalExampleRaw,
-        prettyCode: '',
+        code: singalExampleTsRaw,
         defaultIsOpen: true,
-        lang: 'angular-html',
+        lang: 'ts',
+        name: 'signal-example.component.ts',
+      },
+      {
+        code: singalExampleHtmlRaw,
+        defaultIsOpen: false,
+        lang: 'html',
         name: 'signal-example.component.html',
       },
     ],

@@ -25,7 +25,8 @@
             "styles": ["src/styles.css"],
             "loader": {
               ".html": "text",
-              ".css": "text"
+              ".css": "text",
+              ".ts.txt": "text"
             }
           },
           "configurations": {

@@ -1,4 +1,11 @@
-export const menu = [
+interface Menu {
+  children?: Menu[];
+  name?: string;
+  path?: string;
+  title?: string;
+}
+
+export const menu: Menu[] = [
   {
     name: 'Fundamentos', // Sección principal: Conceptos básicos de Angular
     path: 'fundamentals',
