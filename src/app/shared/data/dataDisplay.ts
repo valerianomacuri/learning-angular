@@ -1,14 +1,18 @@
 import {
   NgForExampleComponent,
   NgIfExampleComponent,
+  NgSwitchExampleComponent,
 } from '../../features/base/components';
 import { Topic } from '../interfaces';
 
 import ngIfExampleHtmlRaw from '../../features/base/components/ng-if-example/ng-if-example.component.html';
 import ngForExampleHtmlRaw from '../../features/base/components/ng-for-example/ng-for-example.component.html';
+import ngSwitchExampleHtmlRaw from '../../features/base/components/ng-switch-example/ng-switch-example.component.html';
 
 import ngIfExampleTsRaw from '../../features/base/components/ng-if-example/ng-if-example.component.ts.txt';
 import ngForExampleTsRaw from '../../features/base/components/ng-for-example/ng-for-example.component.ts.txt';
+import ngSwitchExampleTsRaw from '../../features/base/components/ng-switch-example/ng-switch-example.component.ts.txt';
+import { AppConfig } from '../../../config/app.config';
 
 export const dataDisplay: Topic = {
   name: 'Visualización de Datos', // Cómo mostrar datos en la interfaz.
@@ -21,8 +25,7 @@ export const dataDisplay: Topic = {
         {
           name: '*ngIf',
           anchor: 'ng-if',
-          description:
-            '`*ngIf` es una instrucción que se usa en Angular para **mostrar u ocultar elementos en la pantalla** según una condición. Si la condición es verdadera, el elemento se muestra; si es falsa, no se muestra. Es muy útil para mostrar mensajes, botones o secciones solo cuando se necesitan.',
+          descriptionPath: AppConfig.paths.docs + '/ng-if.md',
           component: NgIfExampleComponent,
           files: [
             {
@@ -39,10 +42,25 @@ export const dataDisplay: Topic = {
             },
           ],
         },
-        // {
-        //   name: '*ngSwitch', // Alternativa para múltiples condiciones.
-        //   path: '#ngswitch',
-        // },
+        {
+          name: '*ngSwitch',
+          anchor: 'ng-switch',
+          component: NgSwitchExampleComponent,
+          files: [
+            {
+              code: ngSwitchExampleTsRaw,
+              defaultIsOpen: true,
+              lang: 'ts',
+              name: '',
+            },
+            {
+              code: ngSwitchExampleHtmlRaw,
+              defaultIsOpen: false,
+              lang: 'html',
+              name: '',
+            },
+          ],
+        },
         // {
         //   name: '[hidden] (Property Binding)', // Muestra u oculta elementos con CSS (siempre en el DOM).
         //   path: '#hidden-binding',

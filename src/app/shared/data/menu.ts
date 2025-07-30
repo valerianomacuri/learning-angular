@@ -17,7 +17,7 @@ interface Menu {
 
 export const menu: Menu[] = [
   fundamentals,
-  // localState,
+  localState,
   dataDisplay,
   // componentsCommunication,
   // lifecycleComponents,

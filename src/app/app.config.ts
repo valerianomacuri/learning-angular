@@ -7,6 +7,7 @@ import { provideHighlightOptions } from 'ngx-highlightjs';
 import { provideMarkdown } from 'ngx-markdown';
 import { provideRouter } from '@angular/router';
 import { mainRoutes } from './shared/routes';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +17,7 @@ export const appConfig: ApplicationConfig = {
     provideHighlightOptions({
       fullLibraryLoader: () => import('highlight.js'),
     }),
+    provideHttpClient(),
     provideMarkdown(),
   ],
 };

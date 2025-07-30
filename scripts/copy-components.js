@@ -1,25 +1,19 @@
 const fs = require("fs-extra");
 const path = require("path");
 
-const names = ["component", "interpolation", "signal", "ng-if", "ng-for"];
-const ext = ".component.ts";
-const components = names.map((name) => ({
-  name,
-  folderPath: path.resolve(
-    __dirname,
-    `../src/app/features/base/components/${name}-example`
-  ),
-}));
+// Ruta de origen: carpeta completa que quieres copiar
+const sourceDir = path.resolve(__dirname, "../src/app/features/base");
 
-for (const { folderPath, name } of components) {
-  const source = path.join(folderPath, `${name}-example${ext}`);
-  const destination = path.join(folderPath, `${name}-example${ext}.txt`);
+// Ruta destino: donde se copiará la carpeta
+const destinationDir = path.resolve(__dirname, "../public/examples/base");
 
-  if (fs.existsSync(source)) {
-    let content = fs.readFileSync(source, "utf-8");
-    fs.writeFileSync(destination, content);
-    console.log(`✅ Copiado: ${source} → ${destination}`);
-  } else {
-    console.warn(`⚠️ No existe: ${source}`);
+async function copyBaseFeaturesFolder() {
+  try {
+    await fs.copy(sourceDir, destinationDir);
+    console.log(`✅ Carpeta copiada:\n${sourceDir} → ${destinationDir}`);
+  } catch (err) {
+    console.error("❌ Error al copiar la carpeta:", err);
   }
 }
+
+copyBaseFeaturesFolder();

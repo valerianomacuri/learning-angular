@@ -3,9 +3,9 @@
     <h3>
       <a class="no-underline" [href]="'#' + anchor()"> # {{ title() }} </a>
     </h3>
-    <markdown class="text-justify">
-      {{ description() }}
-    </markdown>
+    <ng-container *ngIf="!!descriptionPath()">
+      <markdown class="text-justify" [src]="descriptionPath()"> </markdown>
+    </ng-container>
   </article>
   <ng-content select="[example]"></ng-content>
   <ng-content select="[file-list]"></ng-content>

@@ -12,6 +12,7 @@ import { FeatureFileListComponent } from '../feature-file-list/feature-file-list
 import { Feature, ShowCase } from '../../interfaces';
 import { features } from '../../data';
 import { ActivatedRoute } from '@angular/router';
+import { AppConfig } from '../../../../config/app.config';
 
 @Component({
   selector: 'app-feature-showcase-list',
@@ -37,10 +38,9 @@ export class FeatureShowcaseListComponent {
       const topic = params.get('topic');
       console.log({ topic });
       switch (topic) {
-        case 'fundamentals':
-          selectedFeatureList = this.allFeatures[topic];
-          break;
-        case 'data-display':
+        case AppConfig.paths.fundamentals:
+        case AppConfig.paths.dataDisplay:
+        case AppConfig.paths.localState:
           selectedFeatureList = this.allFeatures[topic];
           break;
         default:

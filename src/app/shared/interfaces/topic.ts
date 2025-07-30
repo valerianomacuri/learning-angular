@@ -16,7 +16,8 @@ export interface Feature {
 export interface ShowCase {
   anchor: string;
   component: Type<any>;
-  description: string;
+  description?: string;
+  descriptionPath?: string;
   files: File[];
   name: string;
 }

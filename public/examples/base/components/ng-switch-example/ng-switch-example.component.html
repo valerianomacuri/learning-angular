@@ -1,0 +1,21 @@
+<div class="p-6 max-w-md mx-auto space-y-4 bg-base-200 rounded-box shadow-md">
+  <h2 class="text-xl font-bold">Selecciona un rol</h2>
+
+  <select class="select select-bordered w-full" [(ngModel)]="userType">
+    <option value="admin">Admin</option>
+    <option value="editor">Editor</option>
+    <option value="visitante">Visitante</option>
+  </select>
+
+  <div [ngSwitch]="userType" class="alert">
+    <div *ngSwitchCase="'admin'" class="alert alert-success">
+      👑 Eres <strong>administrador</strong>.
+    </div>
+    <div *ngSwitchCase="'editor'" class="alert alert-info">
+      ✏️ Eres <strong>editor</strong>.
+    </div>
+    <div *ngSwitchDefault class="alert alert-warning">
+      👤 Rol no reconocido.
+    </div>
+  </div>
+</div>
