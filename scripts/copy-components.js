@@ -1,7 +1,7 @@
 const fs = require("fs-extra");
 const path = require("path");
 
-const names = ["component", "signal"];
+const names = ["component", "signal", "ng-if", "ng-for"];
 const ext = ".component.ts";
 const components = names.map((name) => ({
   name,

@@ -8,13 +8,13 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignalExampleComponent {
-  counter = signal(0);
+  counter = signal<number>(0);
 
   increment() {
-    this.counter.update((count) => count + 1);
+    this.counter.update((counter) => counter + 1);
   }
 
   decrement() {
-    this.counter.update((count) => count - 1);
+    this.counter.update((counter) => counter - 1);
   }
 }

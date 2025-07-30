@@ -1,0 +1,17 @@
+<div class="p-4 max-w-md mx-auto">
+  <h1 class="text-2xl font-bold mb-4 text-center">Bienvenido</h1>
+
+  <div *ngIf="isLoggedIn()" class="alert alert-success shadow-lg">
+    <span>Estás logueado. ¡Puedes ver este mensaje!</span>
+  </div>
+
+  <div *ngIf="!isLoggedIn()" class="alert alert-warning shadow-lg">
+    <span>No estás logueado. Por favor inicia sesión.</span>
+  </div>
+
+  <div class="mt-4 text-center">
+    <button class="btn btn-primary" (click)="toggleLoggedIn()">
+      Cambiar estado de sesión
+    </button>
+  </div>
+</div>

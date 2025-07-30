@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-feature-example',
@@ -7,6 +7,4 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   styleUrl: './feature-example.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FeatureExampleComponent {
-  title = input('');
-}
+export class FeatureExampleComponent {}

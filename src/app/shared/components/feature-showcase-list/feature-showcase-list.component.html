@@ -7,9 +7,8 @@
     [anchor]="feature.anchor"
   >
     <ng-container example>
-      <app-feature-example [title]="feature.exampleTitle">
-        <ng-container *ngComponentOutlet="feature.exampleComponent">
-        </ng-container>
+      <app-feature-example>
+        <ng-container *ngComponentOutlet="feature.component"> </ng-container>
       </app-feature-example>
     </ng-container>
     <ng-container file-list>
