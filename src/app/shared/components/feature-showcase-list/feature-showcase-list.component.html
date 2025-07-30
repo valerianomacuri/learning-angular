@@ -1,21 +1,31 @@
 <ng-container
   *ngFor="let feature of featureList(); trackBy: trackByFeatureName"
 >
-  <app-feature-showcase
-    [title]="feature.title"
-    [description]="feature.description"
-    [anchor]="feature.anchor"
-  >
-    <ng-container example>
-      <app-feature-example>
-        <ng-container *ngComponentOutlet="feature.component"> </ng-container>
-      </app-feature-example>
+  <article class="prose prose-sm md:prose-base mb-8 max-w-none">
+    <h1>{{ feature.name }}</h1>
+  </article>
+  <div class="mb-8">
+    <ng-container
+      *ngFor="let showcase of feature.showcases; trackBy: trackByShowcaseName"
+    >
+      <app-feature-showcase
+        [title]="showcase.name"
+        [description]="showcase.description"
+        [anchor]="showcase.anchor"
+      >
+        <ng-container example>
+          <app-feature-example>
+            <ng-container *ngComponentOutlet="showcase.component">
+            </ng-container>
+          </app-feature-example>
+        </ng-container>
+        <ng-container file-list>
+          <app-feature-file-list
+            [name]="showcase.name"
+            [files]="showcase.files"
+          ></app-feature-file-list>
+        </ng-container>
+      </app-feature-showcase>
     </ng-container>
-    <ng-container file-list>
-      <app-feature-file-list
-        [name]="feature.title"
-        [files]="feature.files"
-      ></app-feature-file-list>
-    </ng-container>
-  </app-feature-showcase>
+  </div>
 </ng-container>

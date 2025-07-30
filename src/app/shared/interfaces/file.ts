@@ -1,6 +1,6 @@
 export interface File {
   code: string;
   defaultIsOpen?: boolean;
-  lang: string;
+  lang: 'html' | 'ts';
   name: string;
 }

@@ -20,13 +20,17 @@
     >
       <li class="w-full" *ngFor="let item of drawerMenu">
         <details open>
-          <summary>{{ item.name }}</summary>
+          <summary>
+            <a [href]="item.path">{{ item.name }}</a>
+          </summary>
           <ul *ngIf="item.children">
             <li *ngFor="let subItem of item.children">
               <a class="menu-title">{{ subItem.name }}</a>
               <ul *ngIf="subItem.children">
                 <li *ngFor="let lastItem of subItem.children">
-                  <a>{{ lastItem.name }}</a>
+                  <a [href]="`/${item.path}#${lastItem.path}`">{{
+                    lastItem.name
+                  }}</a>
                 </li>
               </ul>
             </li>

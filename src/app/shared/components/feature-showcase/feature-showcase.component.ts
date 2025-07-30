@@ -10,6 +10,6 @@ import { MarkdownComponent } from 'ngx-markdown';
 })
 export class FeatureShowcaseComponent {
   title = input<string>('');
-  description = input<string>('');
+  description = input<string | undefined>('');
   anchor = input<string>('');
 }

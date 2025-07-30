@@ -1,9 +1,17 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { FeatureShowcaseComponent } from '../feature-showcase/feature-showcase.component';
-import { features } from '../../data';
 import { CommonModule, NgComponentOutlet } from '@angular/common';
 import { FeatureExampleComponent } from '../feature-example/feature-example.component';
 import { FeatureFileListComponent } from '../feature-file-list/feature-file-list.component';
+import { Feature, ShowCase } from '../../interfaces';
+import { features } from '../../data';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-feature-showcase-list',
@@ -19,9 +27,35 @@ import { FeatureFileListComponent } from '../feature-file-list/feature-file-list
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeatureShowcaseListComponent {
-  featureList = signal<typeof features>(features);
+  allFeatures = features;
+  featureList = signal<Feature[]>([]);
+  private activatedRoute = inject(ActivatedRoute);
 
-  trackByFeatureName(index: number, item: (typeof features)[0]): string {
-    return item.title;
+  constructor() {
+    this.activatedRoute.paramMap.subscribe((params) => {
+      let selectedFeatureList: Feature[] = [];
+      const topic = params.get('topic');
+      console.log({ topic });
+      switch (topic) {
+        case 'fundamentals':
+          selectedFeatureList = this.allFeatures[topic];
+          break;
+        case 'data-display':
+          selectedFeatureList = this.allFeatures[topic];
+          break;
+        default:
+          break;
+      }
+      console.log({ selectedFeatureList });
+      this.featureList.set(selectedFeatureList);
+    });
+  }
+
+  trackByFeatureName(index: number, item: Feature): string {
+    return item.name;
+  }
+
+  trackByShowcaseName(index: number, item: ShowCase): string {
+    return item.name;
   }
 }
