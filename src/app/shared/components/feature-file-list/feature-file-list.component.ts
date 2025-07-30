@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Highlight } from 'ngx-highlightjs';
 import { File } from '../../interfaces';
+import { FeatureHighlightFileComponent } from '../feature-highlight-file/feature-highlight-file.component';
 
 @Component({
   selector: 'app-feature-file-list',
-  imports: [CommonModule, Highlight],
+  imports: [CommonModule, FeatureHighlightFileComponent],
   templateUrl: './feature-file-list.component.html',
   styleUrl: './feature-file-list.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

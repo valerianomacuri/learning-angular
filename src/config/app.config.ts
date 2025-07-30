@@ -8,5 +8,9 @@ export const AppConfig = {
     localState: 'local-state',
     fundamentals: 'fundamentals',
     dataDisplay: 'data-display',
+    examples: {
+      base: 'examples/base/components',
+      router: 'examples/router',
+    },
   },
 };

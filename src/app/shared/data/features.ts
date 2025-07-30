@@ -9,11 +9,17 @@ const getFeatureListFromTopic = (topic: Topic): Feature[] => {
     const showcases = item.showcases.map((showcase) => {
       const proccesedFiles = showcase?.files?.map((file) => {
         if (file.lang === 'ts') {
-          return { ...file, name: `${showcase.anchor}-example.ts` };
+          const name = `${showcase.anchor}-example.component.ts`;
+          const codePath = `${AppConfig.paths.examples.base}/${showcase.anchor}-example/${name}.txt`;
+          return { ...file, name, codePath };
         }
+
         if (file.lang === 'html') {
-          return { ...file, name: `${showcase.anchor}-example.html` };
+          const name = `${showcase.anchor}-example.component.html`;
+          const codePath = `${AppConfig.paths.examples.base}/${showcase.anchor}-example/${name}`;
+          return { ...file, name: `${showcase.anchor}-example.html`, codePath };
         }
+
         return {
           ...file,
         };
