@@ -37,8 +37,9 @@ export class FeatureShowcaseListComponent {
       const topic = params.get('topic');
       console.log({ topic });
       switch (topic) {
-        case AppConfig.paths.fundamentals:
+        case AppConfig.paths.communication:
         case AppConfig.paths.dataDisplay:
+        case AppConfig.paths.fundamentals:
         case AppConfig.paths.localState:
           selectedFeatureList = this.allBaseFeatures[topic];
           break;

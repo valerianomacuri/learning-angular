@@ -19,7 +19,7 @@ export const menu: Menu[] = [
   fundamentals,
   localState,
   dataDisplay,
-  // componentsCommunication,
+  componentsCommunication,
   // lifecycleComponents,
   // routing,
   // globalState,

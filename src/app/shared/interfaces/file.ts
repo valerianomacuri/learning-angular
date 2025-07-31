@@ -1,5 +1,5 @@
 export interface File {
-  code: string;
+  code?: string;
   codePath?: string;
   defaultIsOpen?: boolean;
   lang: 'html' | 'ts';

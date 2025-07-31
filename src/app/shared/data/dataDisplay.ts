@@ -83,10 +83,6 @@ export const dataDisplay: Topic = {
             },
           ],
         },
-        // {
-        //   name: 'TrackBy Function', // Función para el seguimiento eficiente de listas.
-        //   path: '#trackby-function',
-        // },
       ],
     },
   ],

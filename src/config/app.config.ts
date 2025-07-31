@@ -10,6 +10,7 @@ export const AppConfig = {
     localState: 'local-state',
     fundamentals: 'fundamentals',
     dataDisplay: 'data-display',
+    communication: 'communication',
     examples: {
       base: 'examples/base/components',
       router: 'examples/router',

@@ -1,5 +1,6 @@
 import { AppConfig } from '../../../config/app.config';
 import { Feature, Topic } from '../interfaces';
+import { componentsCommunication } from './componentsCommunication';
 import { dataDisplay } from './dataDisplay';
 import { fundamentals } from './fundamentals';
 import { localState } from './localState';
@@ -41,4 +42,7 @@ export const baseFeatures = {
   [AppConfig.paths.fundamentals]: getFeatureListFromTopic(fundamentals),
   [AppConfig.paths.localState]: getFeatureListFromTopic(localState),
   [AppConfig.paths.dataDisplay]: getFeatureListFromTopic(dataDisplay),
+  [AppConfig.paths.communication]: getFeatureListFromTopic(
+    componentsCommunication
+  ),
 };
