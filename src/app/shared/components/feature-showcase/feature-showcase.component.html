@@ -4,7 +4,7 @@
       <a class="no-underline"> # {{ title() }} </a>
     </h3>
     <ng-container *ngIf="!!descriptionPath()">
-      <markdown class="text-justify" [src]="descriptionPath()"> </markdown>
+      <markdown class="text-justify" [src]="descriptionPath()"></markdown>
     </ng-container>
   </article>
   <ng-content select="[example]"></ng-content>

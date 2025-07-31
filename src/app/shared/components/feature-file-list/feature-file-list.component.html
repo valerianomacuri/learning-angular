@@ -4,9 +4,7 @@
       <input type="radio" [name]="name()" [checked]="file.defaultIsOpen" />
       {{ file.name }}
     </label>
-    <div
-      class="tab-content p-0 prose prose-sm md:prose-base max-w-none min-h-56"
-    >
+    <div class="tab-content p-0 prose prose-sm md:prose-base max-w-none">
       <ng-container *ngIf="!!file.codePath">
         <app-feature-highlight-file [src]="file.codePath" [lang]="file.lang">
         </app-feature-highlight-file>
