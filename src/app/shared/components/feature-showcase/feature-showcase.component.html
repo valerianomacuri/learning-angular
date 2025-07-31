@@ -1,13 +1,7 @@
 <section [id]="anchor()" class="pt-4">
   <article class="prose prose-sm md:prose-base mb-8 max-w-none">
     <h3>
-      <a
-        class="no-underline"
-        [routerLink]="[`/${path()}`]"
-        [fragment]="anchor()"
-      >
-        # {{ title() }}
-      </a>
+      <a class="no-underline"> # {{ title() }} </a>
     </h3>
     <ng-container *ngIf="!!descriptionPath()">
       <markdown class="text-justify" [src]="descriptionPath()"> </markdown>

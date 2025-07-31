@@ -1,3 +1,4 @@
+import { NgContentComponentComponent } from '../../features/base/components/ng-content-component/ng-content-component.component';
 import { NgContentExampleComponent } from '../../features/base/components/ng-content-example/ng-content-example.component';
 import { Topic } from '../interfaces';
 
@@ -51,7 +52,19 @@ export const componentsCommunication: Topic = {
             },
             {
               lang: 'html',
-              defaultIsOpen: false,
+            },
+          ],
+          imports: [
+            {
+              name: 'ng-content-component',
+              files: [
+                {
+                  lang: 'ts',
+                },
+                {
+                  lang: 'html',
+                },
+              ],
             },
           ],
         },

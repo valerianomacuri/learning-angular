@@ -20,4 +20,10 @@ export interface ShowCase {
   descriptionPath?: string;
   files: File[];
   name: string;
+  imports?: Import[];
+}
+
+interface Import {
+  name: string;
+  files: File[];
 }
