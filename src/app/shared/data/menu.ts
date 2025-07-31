@@ -27,9 +27,8 @@ export const menu: Menu[] = [
 ].map(({ name, path, features }) => ({
   name,
   path,
-  children: features.map(({ name, path, showcases }) => ({
+  children: features.map(({ name, path }) => ({
     name,
     path,
-    children: showcases.map((item) => ({ name: item.name, path: item.anchor })),
   })),
 }));

@@ -3,5 +3,5 @@ export interface File {
   codePath?: string;
   defaultIsOpen?: boolean;
   lang: 'html' | 'ts';
-  name: string;
+  name?: string;
 }

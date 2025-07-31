@@ -4,7 +4,9 @@ export const AppConfig = {
     learningReact: '',
   },
   paths: {
-    docs: 'docs',
+    docs: {
+      base: 'docs/base',
+    },
     localState: 'local-state',
     fundamentals: 'fundamentals',
     dataDisplay: 'data-display',

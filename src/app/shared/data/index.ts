@@ -1,4 +1,4 @@
-export * from './features';
+export * from './baseFeatures';
 export * from './menu';
 export * from './componentsCommunication';
 export * from './dataDisplay';

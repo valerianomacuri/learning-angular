@@ -1,7 +1,10 @@
 <ng-container
   *ngFor="let feature of featureList(); trackBy: trackByFeatureName"
 >
-  <article class="prose prose-sm md:prose-base mb-8 max-w-none">
+  <article
+    [id]="feature.path"
+    class="prose prose-sm md:prose-base mb-8 max-w-none pt-4"
+  >
     <h1>{{ feature.name }}</h1>
   </article>
   <div class="mb-8">

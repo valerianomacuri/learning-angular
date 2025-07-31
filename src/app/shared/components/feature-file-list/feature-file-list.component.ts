@@ -16,6 +16,6 @@ export class FeatureFileListComponent {
   name = input.required<string>();
 
   trackByFileName(index: number, item: File): string {
-    return item.name;
+    return item.name as string;
   }
 }

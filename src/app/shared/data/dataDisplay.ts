@@ -12,7 +12,6 @@ import ngSwitchExampleHtmlRaw from '../../features/base/components/ng-switch-exa
 import ngIfExampleTsRaw from '../../features/base/components/ng-if-example/ng-if-example.component.ts.txt';
 import ngForExampleTsRaw from '../../features/base/components/ng-for-example/ng-for-example.component.ts.txt';
 import ngSwitchExampleTsRaw from '../../features/base/components/ng-switch-example/ng-switch-example.component.ts.txt';
-import { AppConfig } from '../../../config/app.config';
 
 export const dataDisplay: Topic = {
   name: 'Visualización de Datos', // Cómo mostrar datos en la interfaz.
@@ -25,20 +24,17 @@ export const dataDisplay: Topic = {
         {
           name: '*ngIf',
           anchor: 'ng-if',
-          descriptionPath: AppConfig.paths.docs + '/ng-if.md',
           component: NgIfExampleComponent,
           files: [
             {
               code: ngIfExampleTsRaw,
               defaultIsOpen: true,
               lang: 'ts',
-              name: '',
             },
             {
               code: ngIfExampleHtmlRaw,
               defaultIsOpen: false,
               lang: 'html',
-              name: '',
             },
           ],
         },
@@ -51,13 +47,11 @@ export const dataDisplay: Topic = {
               code: ngSwitchExampleTsRaw,
               defaultIsOpen: true,
               lang: 'ts',
-              name: '',
             },
             {
               code: ngSwitchExampleHtmlRaw,
               defaultIsOpen: false,
               lang: 'html',
-              name: '',
             },
           ],
         },
@@ -81,13 +75,11 @@ export const dataDisplay: Topic = {
               code: ngForExampleTsRaw,
               defaultIsOpen: true,
               lang: 'ts',
-              name: '',
             },
             {
               code: ngForExampleHtmlRaw,
               defaultIsOpen: false,
               lang: 'html',
-              name: '',
             },
           ],
         },

@@ -2,7 +2,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
-  OnInit,
   signal,
 } from '@angular/core';
 import { FeatureShowcaseComponent } from '../feature-showcase/feature-showcase.component';
@@ -10,7 +9,7 @@ import { CommonModule, NgComponentOutlet } from '@angular/common';
 import { FeatureExampleComponent } from '../feature-example/feature-example.component';
 import { FeatureFileListComponent } from '../feature-file-list/feature-file-list.component';
 import { Feature, ShowCase } from '../../interfaces';
-import { features } from '../../data';
+import { baseFeatures } from '../../data';
 import { ActivatedRoute } from '@angular/router';
 import { AppConfig } from '../../../../config/app.config';
 
@@ -28,7 +27,7 @@ import { AppConfig } from '../../../../config/app.config';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeatureShowcaseListComponent {
-  allFeatures = features;
+  allBaseFeatures = baseFeatures;
   featureList = signal<Feature[]>([]);
   private activatedRoute = inject(ActivatedRoute);
 
@@ -41,7 +40,7 @@ export class FeatureShowcaseListComponent {
         case AppConfig.paths.fundamentals:
         case AppConfig.paths.dataDisplay:
         case AppConfig.paths.localState:
-          selectedFeatureList = this.allFeatures[topic];
+          selectedFeatureList = this.allBaseFeatures[topic];
           break;
         default:
           break;

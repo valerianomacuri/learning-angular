@@ -1,6 +1,6 @@
 <div class="drawer lg:drawer-open">
   <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content flex flex-col items-center justify-center">
+  <div class="drawer-content flex flex-col items-center">
     <ng-content></ng-content>
   </div>
   <aside class="drawer-side">
@@ -19,23 +19,18 @@
       class="menu text-base-content w-80 p-4 bg-base-100 min-h-full lg:min-h-auto"
     >
       <li class="w-full" *ngFor="let item of drawerMenu">
-        <details open>
-          <summary>
-            <a [href]="item.path">{{ item.name }}</a>
-          </summary>
-          <ul *ngIf="item.children">
-            <li *ngFor="let subItem of item.children">
-              <a class="menu-title">{{ subItem.name }}</a>
-              <ul *ngIf="subItem.children">
-                <li *ngFor="let lastItem of subItem.children">
-                  <a [href]="`/${item.path}#${lastItem.path}`">{{
-                    lastItem.name
-                  }}</a>
-                </li>
-              </ul>
+        <a class="menu-title">
+          {{ item.name }}
+        </a>
+        <ul *ngIf="item.children">
+          <ng-container *ngFor="let subItem of item.children">
+            <li>
+              <a [routerLink]="[`/${item.path}`]" [fragment]="subItem.path">
+                {{ subItem.name }}
+              </a>
             </li>
-          </ul>
-        </details>
+          </ng-container>
+        </ul>
       </li>
     </ul>
   </aside>
